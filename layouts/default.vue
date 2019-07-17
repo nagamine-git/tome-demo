@@ -2,10 +2,12 @@
   <v-app>
     <v-navigation-drawer
       v-model="drawer"
+      style="background: linear-gradient(25deg, rgb(51, 8, 103), rgb(48, 207, 208));"
+      dark
       fixed
       app
     >
-      <v-list>
+      <v-list style="background: rgba(0, 0, 0, 0)">
         <v-list-tile
           v-for="(item, i) in items"
           :key="i"
@@ -24,6 +26,8 @@
     </v-navigation-drawer>
     <v-toolbar
       v-if="!drawer"
+      dark
+      style="background: linear-gradient(25deg, rgb(51, 8, 103), rgb(48, 207, 208));"
       fixed
       app
     >
@@ -32,6 +36,13 @@
     <v-content>
       <v-container>
         <nuxt />
+        <v-footer absolute fixed>
+          <v-text-field
+            class="mx-2"
+            solo
+            label="Outline"
+            outline/>
+        </v-footer>
       </v-container>
     </v-content>
   </v-app>
@@ -54,7 +65,7 @@ export default {
           to: '/inspire'
         }
       ],
-      title: 'Vuetify.js'
+      title: 'ToMe'
     }
   }
 }
